@@ -579,32 +579,63 @@ display: block;
 
 @media (max-width: 768px) {
 
+/* HEADER */
+header {
+flex-direction: column;
+gap: 10px;
+padding: 20px;
 }
 
-@media (max-width: 768px) {
-.proyectos {
-grid-template-columns: 1fr;
-gap: 15px;
-}
-}
-
-@media (max-width: 768px) {
-.card img {
-height: 180px;
-}
-}
-
-@media (max-width: 768px) {
-h1 {
-font-size: 28px;
-}
-
-h2 {
-font-size: 22px;
-}
-
-p {
+nav a {
+margin-left: 10px;
 font-size: 14px;
 }
+
+/* HERO */
+.hero {
+padding: 40px 20px;
+height: 70vh;
 }
 
+/* PROYECTOS */
+.grid-proyectos {
+grid-template-columns: 1fr;
+}
+
+.proyectos {
+padding: 60px 20px;
+}
+
+/* NOSOTROS */
+.nosotros {
+flex-direction: column;
+padding: 60px 20px;
+gap: 30px;
+}
+
+.img-arquitecto {
+width: 100%;
+height: auto;
+}
+
+/* PROCESO */
+.proceso-grid {
+grid-template-columns: 1fr;
+gap: 30px;
+}
+
+/* CONTACTO */
+.contacto-grid {
+grid-template-columns: 1fr;
+}
+
+.contacto {
+padding: 80px 20px;
+}
+
+/* SLIDER */
+.slider {
+height: 300px;
+}
+
+}
