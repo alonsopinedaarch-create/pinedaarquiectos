@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CASA 600</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<header>
+<a href="../index.html">← Volver</a>
+</header>
+
+<section class="proyecto-detalle">
+
+<h1>CASA 600</h1>
+
+<p>
+Casa 600 es un proyecto residencial contemporáneo con enfoque en iluminación natural y contraste en materiales. Una casa pensada para disfrutar.
+</p>
+
+
+<div class="slider">
+    <button class="prev"></button>
+    <div class="slides-wrapper">
+
+<img class="slide active" src="../assets/images/proyecto1.jpg" alt="">
+<img class="slide" src="../assets/images/proyecto2.jpg" alt="">
+<img class="slide" src="../assets/images/proyecto4.jpg" alt="">
+<img class="slide" src="../assets/images/proyecto5.jpg" alt="">
+<img class="slide" src="../assets/images/proyecto7.jpg" alt="">
+<img class="slide" src="../assets/images/proyecto8.jpg" alt="">
+
+
+
+
+</div>
+
+<button class="next"></button>
+
+<!-- indicadores -->
+ <div class="dots"></div>
+
+</div>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+const slides = document.querySelectorAll(".slide");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+const dotsContainer = document.querySelector(".dots");
+
+let index = 0;
+
+// Crear dots
+slides.forEach((_, i) => {
+const dot = document.createElement("div");
+dot.classList.add("dot");
+dotsContainer.appendChild(dot);
+
+dot.addEventListener("click", () => {
+index = i;
+updateSlider();
+});
+});
+
+const dots = document.querySelectorAll(".dot");
+
+function updateSlider() {
+slides.forEach(s => s.classList.remove("active"));
+dots.forEach(d => d.classList.remove("active"));
+
+slides[index].classList.add("active");
+dots[index].classList.add("active");
+}
+
+function nextSlide() {
+index = (index + 1) % slides.length;
+updateSlider();
+}
+
+function prevSlideFn() {
+index = (index - 1 + slides.length) % slides.length;
+updateSlider();
+}
+
+next.addEventListener("click", nextSlide);
+prev.addEventListener("click", prevSlideFn);
+
+// SWIPE móvil
+let startX = 0;
+
+document.querySelector(".slider").addEventListener("touchstart", e => {
+startX = e.touches[0].clientX;
+});
+
+document.querySelector(".slider").addEventListener("touchend", e => {
+let endX = e.changedTouches[0].clientX;
+
+if (startX - endX > 50) nextSlide();
+if (endX - startX > 50) prevSlideFn();
+});
+
+updateSlider();
+
+});
+</script>
+
+
+</body>
+</html>
+

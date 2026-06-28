@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pineda Arquitectos</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+<img src="assets/logo/logo.png" alt="Logo" class="logo">
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#proyectos">Proyectos</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</header>
+
+<section class="hero anim-section">
+<div class="hero-content">
+<h1>PINEDA Arquitectos</h1>
+<p>Arquitectura contemporánea con identidad, precisión y contexto.</p>
+<a href="#proyectos" class="btn-hero">Ver proyectos</a>
+</div>
+</section>
+
+<section id="proyectos" class="proyectos anim-section">
+<h2>Proyectos</h2>
+
+<div class="grid-proyectos anim-section">
+
+<div class="proyecto">
+<a href="proyectos/Casa 600.html">
+<img src="assets/images/proyecto1.jpg">
+<h3>CASA 600 </h3>
+</a>
+</div>
+
+<div class="proyecto">
+<a href="proyectos/Casa Mexico.html">
+<img src="assets/images/casamexico1.jpg">
+<h3>CASA MÉXICO</h3>
+</a>
+</div>
+
+<div class="proyecto">
+<a href="proyectos/Casa Americas.html">
+<img src="assets/images/casaamericas1.jpg">
+<h3>CASA AMÉRICAS
+</h3>
+</a>
+</div>
+
+<div class="proyecto">
+<a href="proyectos/Laboratorio LA.html">
+<img src="assets/images/laboratorio4.jpg">
+<h3>LABORATORIO LA</h3>
+</a>
+</div>
+
+<div class="proyecto">
+<a href="proyectos/Casa SF1.html">
+<img src="assets/images/casasf3.jpg">
+<h3>CASA SF 1</h3>
+</a>
+</div>
+
+<div class="proyecto">
+<a href="proyectos/Edificio C.html">
+<img src="assets/images/edificio1.jpg">
+<h3>ARQUITECTURA INDUSTRIAL</h3>
+</a>
+</div>
+
+</div>
+</section>
+
+<section id="proceso" class="proceso anim-section">
+
+<h2>Nuestro proceso</h2>
+
+<div class="proceso-grid">
+
+<div class="paso">
+<span>01</span>
+<h3>Escuchamos</h3>
+<p>Comprendemos tus necesidades, objetivos y presupuesto.</p>
+</div>
+
+<div class="paso">
+<span>02</span>
+<h3>Diseñamos</h3>
+<p>Transformamos las ideas en un proyecto funcional y bien definido.</p>
+</div>
+
+<div class="paso">
+<span>03</span>
+<h3>Construimos</h3>
+<p>Coordinamos la ejecución cuidando la calidad y los tiempos.</p>
+</div>
+
+<div class="paso">
+<span>04</span>
+<h3>Entregamos</h3>
+<p>Supervisamos cada detalle hasta la entrega final del proyecto.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="nosotros" class="nosotros anim-section">
+
+<div class="perfil-arquitecto">
+
+<img src="assets/images/arquitecto.jpg" alt="Arq. Alonso Pineda" class="img-arquitecto">
+
+<h3>ARQ. ALONSO PINEDA</h3>
+
+<p class="frase-arquitecto">
+“La arquitectura tiene el poder de transformar tu día a día”
+</p>
+
+</div>
+
+<div class="nosotros-content">
+
+<h2>Nosotros</h2>
+
+<p>
+EN PINEDA ARQUITECTOS CONTAMOS CON EXPERIENCIA EN EL DISEÑO Y DESARROLLO DE PROYECTOS RESIDENCIALES, COMERCIALES E INDUSTRIALES. A LO LARGO DE NUESTRA TRAYECTORIA HEMOS FORTALECIDO NUESTRA EXPERIENCIA Y HABILIDADES PARA DISEÑAR Y EJECUTAR DESARROLLOS CONSTRUCTIVOS, SUPERVISIÓN DE ESTRUCTURAS, INSTALACIONES, ACABADOS, ASÍ COMO LIDERAR GRUPOS DE TRABAJO PARA CUMPLIR CON LOS OBJETIVOS ESTABLECIDOS.
+</p>
+
+<p>
+CON UN RESPALDO DE +2,000 M2 DESARROLLADOS A LO LARGO DE NUESTRA TRAYECTORIA, CONTAMOS CON UNA AMPLIA EXPERIENCIA PARA DESARROLLAR PROYECTOS DE CONSTRUCCIÓN DE GRAN NIVEL.
+</p>
+
+</div>
+
+</section>
+
+<section id="contacto" class="contacto anim-section">
+
+<div class="contacto-contenido">
+
+<h2>Contacto</h2>
+
+<p class="contacto-texto">
+Cada proyecto comienza con una conversación.
+Si tienes una idea en mente, estaremos encantados de conocerla.
+</p>
+
+<a class="whatsapp-btn"
+href="https://wa.me/526182062588?text=Hola,%20me%20interesa%20recibir%20información%20sobre%20un%20proyecto%20arquitectónico."
+target="_blank">
+
+<span>Envíanos un mensaje</span>
+
+</a>
+
+<div class="contacto-info">
+
+<p>alonso.pineda.arch@gmail.com</p>
+
+<p>Durango, México</p>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+const sections = document.querySelectorAll(".anim-section");
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add("visible");
+}
+});
+}, {
+threshold: 0.15
+});
+
+sections.forEach(sec => observer.observe(sec));
+
+});
+</script>
+
+<footer>
+
+<img src="assets/logo/logo.png" class="footer-logo" alt="Pineda Arquitectos">
+
+
+<div class="footer-redes">
+
+<a href="https://www.instagram.com/pineda.arquitectos/" target="_blank">
+<img src="assets/images/instagram.svg" alt="Instagram">
+</a>
+
+<a href="https://www.facebook.com/pinedaarquitectos" target="_blank">
+<img src="assets/images/facebook.svg" alt="Facebook">
+</a>
+
+</div>
+
+<small>© 2026 PINEDA Arquitectos. Todos los derechos reservados.</small>
+
+</footer>
+
+
+
+</body>
+</html>
