@@ -88,11 +88,27 @@ gap: 20px;
 }
 
 .proyecto img {
-width: 100%;
-height: 300px;
-object-fit: cover;
-display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
 }
+
+.proyecto a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.proyecto a:hover {
+  transform: scale(1.04);
+}
+
+.proyecto a:active {
+  transform: scale(0.95);
+}
+
 
 .proyecto h3 {
 margin-top: 10px;
@@ -126,6 +142,7 @@ text-align: center;
 /* Texto */
 .nosotros-content {
 max-width: 600px;
+text-align: justify;
 }
 
 .nosotros h2 {
@@ -140,6 +157,8 @@ text-justify: distribute-all-lines;
 line-height: 1.2;
 color: #444;
 margin-bottom: 12px;
+text-align: justify;
+hyphens: auto;
 }
 
 .frase-arquitecto {
@@ -312,10 +331,6 @@ cursor: pointer;
 background: white;
 }
 
-.contacto {
-padding: 120px 80px;
-background: #f5f5f5;
-}
 
 .contacto h2 {
 font-weight: 400;
@@ -375,8 +390,10 @@ color: #fff;
 
 .anim-section {
 opacity: 0;
-transform: translateY(30px);
-transition: opacity 0.8s ease, transform 0.8s ease;
+transform: translateY(40px);
+transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+will-change: opacity, transform;
+
 }
 
 .anim-section.visible {
@@ -463,6 +480,10 @@ background:#e6e6e6;
 color:#fff;
 padding:70px 20px;
 text-align:center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 }
 
 .footer-logo{
@@ -639,3 +660,15 @@ height: 300px;
 }
 
 }
+
+body {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+body.fade-out {
+  opacity: 0;
+  transform: scale(1.02);
+}
+

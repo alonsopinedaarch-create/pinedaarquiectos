@@ -5,7 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pineda Arquitectos</title>
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" href="assets/logo/logo2.png" type="image/png">
+<link rel="icon" href="assets/logo/logo2.png" type="image/png">
+<meta property="og:image" content="assets/images/preview.jpg">
+<meta property="og:title" content="Pineda Arquitectos">
+<meta property="og:description" content="Arquitectura contemporánea con identidad y precisión.">
 </head>
+
 
 <body>
 
@@ -119,7 +125,7 @@
 
 <img src="assets/images/arquitecto.jpg" alt="Arq. Alonso Pineda" class="img-arquitecto">
 
-<h3>ARQ. ALONSO PINEDA</h3>
+<h3>Arq. Alonso Esteban Pineda</h3>
 
 <p class="frase-arquitecto">
 “La arquitectura tiene el poder de transformar tu día a día”
@@ -132,12 +138,11 @@
 <h2>Nosotros</h2>
 
 <p>
-EN PINEDA ARQUITECTOS CONTAMOS CON EXPERIENCIA EN EL DISEÑO Y DESARROLLO DE PROYECTOS RESIDENCIALES, COMERCIALES E INDUSTRIALES. A LO LARGO DE NUESTRA TRAYECTORIA HEMOS FORTALECIDO NUESTRA EXPERIENCIA Y HABILIDADES PARA DISEÑAR Y EJECUTAR DESARROLLOS CONSTRUCTIVOS, SUPERVISIÓN DE ESTRUCTURAS, INSTALACIONES, ACABADOS, ASÍ COMO LIDERAR GRUPOS DE TRABAJO PARA CUMPLIR CON LOS OBJETIVOS ESTABLECIDOS.
+En Pineda Arquitectos contamos con una sólida experiencia en el diseño y desarrollo de proyectos residenciales, comerciales e industriales. A lo largo de nuestra trayectoria hemos perfeccionado nuestros procesos y fortalecido nuestras capacidades para proyectar, coordinar y ejecutar obras de alta calidad, abarcando supervisión de estructuras, instalaciones, acabados y la dirección de equipos de trabajo para garantizar el cumplimiento de los objetivos en tiempo, calidad y presupuesto.
 </p>
 
 <p>
-CON UN RESPALDO DE +2,000 M2 DESARROLLADOS A LO LARGO DE NUESTRA TRAYECTORIA, CONTAMOS CON UNA AMPLIA EXPERIENCIA PARA DESARROLLAR PROYECTOS DE CONSTRUCCIÓN DE GRAN NIVEL.
-</p>
+Con más de 2,000 m² desarrollados, respaldamos cada proyecto con experiencia, compromiso y atención al detalle. Nuestro enfoque combina diseño, funcionalidad y excelencia constructiva para crear espacios que responden a las necesidades de cada cliente y aportan un valor duradero.
 
 </div>
 
@@ -215,7 +220,27 @@ sections.forEach(sec => observer.observe(sec));
 
 </footer>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+  document.querySelectorAll('.proyecto a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const url = this.href;
+
+      document.body.classList.add('fade-out');
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 500);
+    });
+  });
+
+});
+</script>
 
 </body>
 </html>
+
+
