@@ -26,11 +26,30 @@
 </header>
 
 <section class="hero anim-section">
-<div class="hero-content">
-<h1>PINEDA Arquitectos</h1>
-<p>Arquitectura contemporánea con identidad, precisión y contexto.</p>
-<a href="#proyectos" class="btn-hero">Ver proyectos</a>
-</div>
+
+    <div class="hero-slider">
+
+        <div class="hero-slide active"
+             style="background-image:url('assets/images/proyecto1.jpg')"></div>
+
+        <div class="hero-slide"
+             style="background-image:url('assets/images/proyecto3.jpg')"></div>
+
+        <div class="hero-slide"
+             style="background-image:url('assets/images/edificio1.jpg')"></div>
+
+        <div class="hero-slide"
+             style="background-image:url('assets/images/proyecto2.jpg')"></div>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>PINEDA Arquitectos</h1>
+        <p>Arquitectura contemporánea con identidad, precisión y contexto.</p>
+        <a href="#proyectos" class="btn-hero">Ver proyectos</a>
+    </div>
+
 </section>
 
 <section id="proyectos" class="proyectos anim-section">
@@ -125,13 +144,9 @@
 
 <img src="assets/images/arquitecto.jpg" alt="Arq. Alonso Pineda" class="img-arquitecto">
 
-<h3>Arq. Alonso Esteban Pineda</h3>
-
-<p class="frase-arquitecto">
-“La arquitectura tiene el poder de transformar tu día a día”
-</p>
-
+<h3>Arq. Alonso Pineda</h3>
 </div>
+
 
 <div class="nosotros-content">
 
@@ -143,6 +158,12 @@ En Pineda Arquitectos contamos con una sólida experiencia en el diseño y desar
 
 <p>
 Con más de 2,000 m² desarrollados, respaldamos cada proyecto con experiencia, compromiso y atención al detalle. Nuestro enfoque combina diseño, funcionalidad y excelencia constructiva para crear espacios que responden a las necesidades de cada cliente y aportan un valor duradero.
+</p>
+
+
+<p class="frase-arquitecto">
+“La arquitectura tiene el poder de transformar tu día a día”
+</p>
 
 </div>
 
@@ -220,6 +241,53 @@ sections.forEach(sec => observer.observe(sec));
 
 </footer>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  document.querySelectorAll('.proyecto a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const url = this.href;
+
+      document.body.classList.add('fade-out');
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 500);
+    });
+  });
+
+});
+</script>
+
+<script>
+window.addEventListener("pageshow", function (event) {
+  document.body.classList.remove("fade-out");
+});
+</script>
+
+<script>
+
+const heroSlides = document.querySelectorAll(".hero-slide");
+
+let heroIndex = 0;
+
+setInterval(()=>{
+
+heroSlides[heroIndex].classList.remove("active");
+
+heroIndex++;
+
+if(heroIndex >= heroSlides.length){
+heroIndex = 0;
+}
+
+heroSlides[heroIndex].classList.add("active");
+
+},7000);
+
+</script>
 
 </body>
 </html>
