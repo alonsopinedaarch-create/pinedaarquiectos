@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Proyecto estructural</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" href="../assets/logo/logo2.png" type="image/png">
+<link rel="icon" href="../assets/logo/logo2.png" type="image/png">
+</head>
+
+<body>
+
+<header>
+
+<img src="../assets/logo/logo.png" alt="Logo" class="logo">
+
+<nav>
+<a href="../index.html#inicio">Inicio</a>
+<a href="../index.html#proyectos">Proyectos</a>
+<a href="../index.html#nosotros">Nosotros</a>
+<a href="../index.html#contacto">Contacto</a>
+</nav>
+
+</header>
+
+<section class="volver">
+
+<a href="../index.html" class="btn-volver">
+← Volver
+</a>
+
+</section>
+
+<section class="proyecto-detalle">
+
+
+<div class="detalle-info">
+
+
+<h1>Proyecto Estructural</h1>
+
+
+<p>
+Diseñamos soluciones estructurales seguras y eficientes para cada proyecto.
+
+El diseño estructural permite garantizar la estabilidad, seguridad y correcto funcionamiento de una construcción.
+
+Desarrollamos propuestas estructurales adaptadas a las características específicas de cada proyecto, considerando materiales, sistemas constructivos y condiciones del sitio.
+
+La estructura se integra con la arquitectura para lograr espacios eficientes, seguros y coherentes con el diseño general del proyecto.
+</p>
+
+
+<h2>Incluye:</h2>
+
+
+<ul>
+    <li>Firma DRO-A Director Responsable de Obra</li>
+    <li>Análisis estructural</li>
+    <li>Diseño de elementos estructurales</li>
+    <li>Cálculo estructural</li>
+    <li>Planos estructurales</li>
+    <li>Especificaciones técnicas</li>
+    <li>Detalles constructivos</li>
+    <li>Coordinación con proyecto arquitectónico</li>
+</ul>
+
+
+</div>
+
+
+
+<div class="detalle-imagen">
+
+
+<div class="slider">
+
+
+<button class="prev"></button>
+
+
+<div class="slides-wrapper">
+
+
+<img class="slide active" src="../assets/images/proyecto-estructural.png" alt="Proyecto estructural">
+
+<img class="slide" src="../assets/images/planos-ejecutivo.png" alt="Planos estructurales">
+
+
+</div>
+
+
+<button class="next"></button>
+
+
+<!-- indicadores -->
+<div class="dots"></div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<footer>
+
+<img src="../assets/logo/logo.png" class="footer-logo" alt="Pineda Arquitectos">
+
+
+<div class="footer-redes">
+
+<a href="https://www.instagram.com/pineda.arquitectos/" target="_blank">
+<img src="../assets/images/instagram.svg" alt="Instagram">
+</a>
+
+<a href="https://www.facebook.com/pinedaarquitectos" target="_blank">
+<img src="../assets/images/facebook.svg" alt="Facebook">
+</a>
+
+</div>
+
+<small>© 2026 PINEDA Arquitectos. Todos los derechos reservados.</small>
+
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+const slides = document.querySelectorAll(".slide");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+const dotsContainer = document.querySelector(".dots");
+
+let index = 0;
+
+// Crear dots
+slides.forEach((_, i) => {
+const dot = document.createElement("div");
+dot.classList.add("dot");
+dotsContainer.appendChild(dot);
+
+dot.addEventListener("click", () => {
+index = i;
+updateSlider();
+});
+});
+
+const dots = document.querySelectorAll(".dot");
+
+function updateSlider() {
+slides.forEach(s => s.classList.remove("active"));
+dots.forEach(d => d.classList.remove("active"));
+
+slides[index].classList.add("active");
+dots[index].classList.add("active");
+}
+
+function nextSlide() {
+index = (index + 1) % slides.length;
+updateSlider();
+}
+
+function prevSlideFn() {
+index = (index - 1 + slides.length) % slides.length;
+updateSlider();
+}
+
+next.addEventListener("click", nextSlide);
+prev.addEventListener("click", prevSlideFn);
+
+// SWIPE móvil
+let startX = 0;
+
+document.querySelector(".slider").addEventListener("touchstart", e => {
+startX = e.touches[0].clientX;
+});
+
+document.querySelector(".slider").addEventListener("touchend", e => {
+let endX = e.changedTouches[0].clientX;
+
+if (startX - endX > 50) nextSlide();
+if (endX - startX > 50) prevSlideFn();
+});
+
+updateSlider();
+
+});
+</script>
+
+
+</body>
+</html>

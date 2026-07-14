@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Construcción</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" href="../assets/logo/logo2.png" type="image/png">
+<link rel="icon" href="../assets/logo/logo2.png" type="image/png">
+</head>
+
+<body>
+
+<header>
+
+<img src="../assets/logo/logo.png" alt="Logo" class="logo">
+
+<nav>
+<a href="../index.html#inicio">Inicio</a>
+<a href="../index.html#proyectos">Proyectos</a>
+<a href="../index.html#nosotros">Nosotros</a>
+<a href="../index.html#contacto">Contacto</a>
+</nav>
+
+</header>
+
+<section class="volver">
+
+<a href="../index.html" class="btn-volver">
+← Volver
+</a>
+
+</section>
+
+<section class="proyecto-detalle">
+
+<div class="detalle-info">
+
+<h1>Construcción</h1>
+
+<p>
+Llevamos el diseño del papel a la realidad mediante una ejecución precisa y responsable.
+
+La construcción requiere coordinación, experiencia y atención al detalle. En Pineda Arquitectos desarrollamos proyectos constructivos cuidando cada etapa del proceso, desde la planeación inicial hasta la entrega final.
+
+Trabajamos con una metodología basada en organización, supervisión y control de calidad, buscando que cada elemento construido corresponda con la visión arquitectónica planteada.
+</p>
+
+<h2>Incluye:</h2>
+
+<ul>
+<li>Planeación y programación de obra</li>
+<li>Presupuesto y control de costos</li>
+<li>Coordinación de proveedores</li>
+<li>Supervisión de obra</li>
+<li>Control de calidad</li>
+<li>Administración de obra</li>
+<li>Ejecución de acabados</li>
+<li>Entrega de proyecto terminado</li>
+</ul>
+
+</div>
+
+
+<div class="detalle-imagen">
+
+<div class="slider">
+
+<button class="prev"></button>
+
+<div class="slides-wrapper">
+
+<img class="slide active" src="../assets/images/construccion.png" alt="Construcción">
+
+</div>
+
+<button class="next"></button>
+
+<div class="dots"></div>
+
+</div>
+
+</div>
+
+
+</section>
+
+<footer>
+
+<img src="../assets/logo/logo.png" class="footer-logo" alt="Pineda Arquitectos">
+
+
+<div class="footer-redes">
+
+<a href="https://www.instagram.com/pineda.arquitectos/" target="_blank">
+<img src="../assets/images/instagram.svg" alt="Instagram">
+</a>
+
+<a href="https://www.facebook.com/pinedaarquitectos" target="_blank">
+<img src="../assets/images/facebook.svg" alt="Facebook">
+</a>
+
+</div>
+
+<small>© 2026 PINEDA Arquitectos. Todos los derechos reservados.</small>
+
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+const slides = document.querySelectorAll(".slide");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+const dotsContainer = document.querySelector(".dots");
+
+let index = 0;
+
+// Crear dots
+slides.forEach((_, i) => {
+const dot = document.createElement("div");
+dot.classList.add("dot");
+dotsContainer.appendChild(dot);
+
+dot.addEventListener("click", () => {
+index = i;
+updateSlider();
+});
+});
+
+const dots = document.querySelectorAll(".dot");
+
+function updateSlider() {
+slides.forEach(s => s.classList.remove("active"));
+dots.forEach(d => d.classList.remove("active"));
+
+slides[index].classList.add("active");
+dots[index].classList.add("active");
+}
+
+function nextSlide() {
+index = (index + 1) % slides.length;
+updateSlider();
+}
+
+function prevSlideFn() {
+index = (index - 1 + slides.length) % slides.length;
+updateSlider();
+}
+
+next.addEventListener("click", nextSlide);
+prev.addEventListener("click", prevSlideFn);
+
+// SWIPE móvil
+let startX = 0;
+
+document.querySelector(".slider").addEventListener("touchstart", e => {
+startX = e.touches[0].clientX;
+});
+
+document.querySelector(".slider").addEventListener("touchend", e => {
+let endX = e.changedTouches[0].clientX;
+
+if (startX - endX > 50) nextSlide();
+if (endX - startX > 50) prevSlideFn();
+});
+
+updateSlider();
+
+});
+</script>
+
+
+</body>
+</html>

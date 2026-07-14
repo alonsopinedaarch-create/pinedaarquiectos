@@ -548,8 +548,8 @@ transform:translateY(-2px);
 /* ========================= */
 
 .proceso{
-padding:120px 80px;
-background:#ffffff;
+padding:60px 8% 120px;
+background:#f5f5f5;
 }
 
 .proceso h2{
@@ -709,4 +709,380 @@ transition:.3s;
 
 .btn-volver:hover{
 opacity:.6;
+}
+
+/*==========================
+        SERVICIOS
+==========================*/
+
+.servicios{
+
+    padding:120px 8%;
+    background:#fff;
+
+}
+
+.servicios-titulo{
+
+    text-align:center;
+    margin-bottom:120px;
+
+}
+
+.servicios-titulo h2{
+
+    font-size:48px;
+    margin-bottom:20px;
+
+}
+
+.servicios-titulo p{
+
+    color:#777;
+    max-width:650px;
+    margin:auto;
+    line-height:1.8;
+
+}
+
+.servicio{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:80px;
+
+    margin-bottom:60px;
+
+}
+
+.servicio:last-child{
+  margin-bottom: 001px;
+  
+}
+
+.reverse{
+
+    flex-direction:row-reverse;
+
+}
+
+.servicio-imagen{
+
+    flex:1;
+
+}
+
+.servicio-imagen img{
+
+    width:100%;
+    max-width:550px;
+
+    display:block;
+    margin:auto;
+
+    transition:.45s;
+
+}
+
+.servicio-imagen img:hover{
+
+    transform:scale(1.04);
+
+}
+
+.servicio-info{
+
+    flex:1;
+
+}
+
+.servicio-info h3{
+
+    font-size:38px;
+    margin-bottom:25px;
+
+}
+
+.servicio-info p{
+
+    color:#666;
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+.servicio-info a{
+
+    color:#000;
+    text-decoration:none;
+
+    border-bottom:1px solid #000;
+
+    padding-bottom:5px;
+
+    transition:.35s;
+
+}
+
+.servicio-info a:hover{
+
+    letter-spacing:2px;
+
+}
+
+@media(max-width:900px){
+
+.servicio,
+.reverse{
+
+    flex-direction:column;
+
+}
+
+.servicio-info{
+
+    text-align:center;
+
+}
+
+.servicio-imagen img{
+
+    max-width:90%;
+
+}
+
+.servicios-titulo h2{
+
+    font-size:36px;
+
+}
+
+.servicio-info h3{
+
+    font-size:30px;
+
+}
+
+}
+
+/*====================================
+        ANIMACIÓN SERVICIOS
+====================================*/
+
+.servicio.reveal .servicio-imagen{
+
+    opacity:0;
+    transform:translateX(-80px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+.servicio.reveal .servicio-info{
+
+    opacity:0;
+    transform:translateX(80px);
+
+    transition:
+        opacity 1s ease .2s,
+        transform 1s ease .2s;
+
+}
+
+/* Cuando el servicio es reverse */
+
+.servicio.reverse.reveal .servicio-imagen{
+
+    transform:translateX(80px);
+
+}
+
+.servicio.reverse.reveal .servicio-info{
+
+    transform:translateX(-80px);
+
+}
+
+/* Estado visible */
+
+.servicio.reveal.active .servicio-imagen{
+
+    opacity:1;
+    transform:translateX(0);
+
+}
+
+.servicio.reveal.active .servicio-info{
+
+    opacity:1;
+    transform:translateX(0);
+
+}
+
+/*==================================
+        FINANCIAMIENTO
+===================================*/
+
+.financiamiento{
+
+    padding:120px 8%;
+    background:#ffffff;
+
+}
+
+.financiamiento-header{
+
+    text-align:center;
+    margin-bottom:80px;
+
+}
+
+.financiamiento-header h2{
+
+    font-size:48px;
+    margin-bottom:20px;
+
+}
+
+.financiamiento-header p{
+
+    max-width:650px;
+    margin:auto;
+    color:#666;
+    line-height:1.8;
+
+}
+
+.financiamiento-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+.financiamiento-item{
+
+    text-align:center;
+
+    padding:0 45px;
+
+}
+
+.financiamiento-item:not(:last-child){
+
+    border-right:1px solid #e5e5e5;
+
+}
+
+.icono{
+
+    width:65px;
+    height:65px;
+
+    margin:0 auto 30px;
+
+    color:#111;
+
+}
+
+.icono svg{
+
+    width:100%;
+    height:100%;
+
+    transition:.35s ease;
+
+}
+
+.financiamiento-item:hover .icono svg{
+
+    transform:translateY(-4px);
+
+}
+
+.financiamiento-item h3{
+
+    font-size:24px;
+
+    margin-bottom:18px;
+
+    font-weight:500;
+
+}
+
+.financiamiento-item p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+@media (max-width:900px){
+
+    .financiamiento-grid{
+
+        grid-template-columns:1fr;
+
+        gap:70px;
+
+    }
+
+    .financiamiento-item{
+
+        border-right:none !important;
+
+        padding:0;
+
+    }
+
+    .financiamiento-header h2{
+
+        font-size:36px;
+
+    }
+
+}
+
+.hero{
+    position: relative;
+}
+
+.hero-stats{
+    position: absolute;
+    right: 60px;
+    bottom: 40px;
+
+    display: flex;
+    gap: 50px;
+
+    color: #fff;
+    z-index: 10;
+}
+
+.stat{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.stat span{
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.stat small{
+    margin-top: 6px;
+    font-size: .75rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: .75;
 }
