@@ -621,15 +621,24 @@ display: block;
 @media (max-width: 768px) {
 
 /* HEADER */
-header {
-flex-direction: column;
-gap: 10px;
-padding: 20px;
+header{
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    width:100%;
+    box-sizing:border-box;
 }
 
-nav a {
-margin-left: 10px;
-font-size: 14px;
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+}
+
+nav a{
+    margin:0;
 }
 
 /* HERO */
